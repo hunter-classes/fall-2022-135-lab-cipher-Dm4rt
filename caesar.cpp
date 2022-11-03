@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include "caesar.h"
 
 char shiftChar(char c, int rshift){
@@ -44,6 +45,48 @@ std::string encryptCaesar(std::string plaintext, int rshift){
 }
 
 std::string solve(std::string encrypted_string){
-  std::vector<int> freq[26];
-  return "";
+  const std::string alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  std::vector<double> freq;
+
+  const std::vector<double> engFreq={8.12,1.49,2.71,4.32,12.02,2.30,2.03,5.92,
+			       7.31,0.10,0.69,3.98,2.61,6.95,7.68,1.82,0.11,
+			       6.02,6.28,9.10,2.88,1.11,2.09,0.17,2.11,0.07};
+
+  int lowestDistance;
+  int lowDistShift;
+  for(int shift=1;shift<26;shift++){
+    std::string newMessage=encryptCaesar(encrypted_string,shift);
+    std::vector<double> newFreq (0,0);
+    freq.swap(newFreq);
+    for(int x=0;x<26;x++){
+      char curLetter=alpha[x];
+      int letterCount=0;
+      for(int j=0;j<newMessage.length();j++){
+	if(toupper(newMessage[j])==curLetter){
+	  letterCount++;
+	}
+      }
+      double letterFreq=(letterCount/(newMessage.length()*1.00))*100;
+      freq.push_back(letterFreq);
+      
+    }
+    int sum=0;
+    for(int c=0;c<26;c++){
+      double sub=abs(engFreq.at(c)-freq.at(c));
+      sum+=pow(sub,2);
+    }
+    int curDistance=0;
+    curDistance=sqrt(sum);
+    if(lowestDistance==NULL){
+      lowestDistance=curDistance;
+      lowDistShift=shift;
+    }
+    else if(curDistance<lowestDistance){
+      lowestDistance=curDistance;
+      lowDistShift=shift;
+      
+    }
+    
+  }
+  return encryptCaesar(encrypted_string,lowDistShift);
 }

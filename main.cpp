@@ -6,12 +6,8 @@
 
 int main()
 {
-  std::cout<<"encryptCaesar('Way to Go!,5'): "<<encryptCaesar("Way to Go!", 5)<<std::endl;
-  std::cout<<"encryptVigenere('Hello, World!', 'cake'): "<<encryptVigenere("Hello, World!", "cake")<<std::endl;
-  std::string encrypted=encryptCaesar("Way to Go!",5);
-  std::cout<<"decryptCaesar('Bfd yt Lt!', 'cake'): "<<decryptCaesar(encrypted,5)<<std::endl;
-  encrypted=encryptVigenere("Hello, World!", "cake");
-  std::cout<<"decryptVigenere('Jevpq, Wyvnd!','cake'): "<<decryptVigenere(encrypted,"cake")<<std::endl;
+      std::cout<<solve("Oto jzf pgpc splc esp eclrpoj zq Olces Awlrfptd Esp Htdp? T eszfrse yze. Te’d yze l dezcj esp Upot hzfwo epww jzf. Te’d l Dtes wprpyo. Olces Awlrfptd hld l Olcv Wzco zq esp Dtes, dz azhpcqfw lyo dz htdp sp nzfwo fdp esp Qzcnp ez tyqwfpynp esp xtotnswzctlyd ez ncplep wtqp… Sp slo dfns l vyzhwporp zq esp olcv dtop esle sp nzfwo pgpy vppa esp zypd sp nlcpo lmzfe qczx ojtyr. Esp olcv dtop zq esp Qzcnp td l aleshlj ez xlyj lmtwtetpd dzxp nzydtopc ez mp fyylefclw.")<<std::endl;
+
   return 0;
   
 }
