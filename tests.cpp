@@ -14,22 +14,4 @@ TEST_CASE("shiftChar"){
   CHECK(shiftChar('!',10)=='!');
 }
 
-TEST_CASE("encryptCaesar"){
-  CHECK(encryptCaesar("Way to Go!",5) == "Bfd yt Lt!");
-  CHECK(encryptCaesar("Hello, World!",10) == "Rovvy, Gybvn!");
-}
 
-TEST_CASE("encryptVigenere"){
-  CHECK(encryptVigenere("Hello, World!", "cake") == "Jevpq, Wyvnd!");
-  CHECK(encryptVigenere("GEEKSFORGEEKS", "ayush") == "GCYCZFMLYLEIM");
-}
-
-TEST_CASE("decryptCaesar"){
-  CHECK(decryptCaesar("Rovvy, Gybvn!", 10)== "Hello, World!");
-  CHECK(decryptCaesar("Bfd yt Lt!", 5)== "Way to Go!");
-}
-
-TEST_CASE("decryptVigenere"){
-  CHECK(decryptVigenere("Jevpq, Wyvnd!", "cake")== "Hello, World!");
-  CHECK(decryptVigenere("GCYCZFMLYLEIM", "ayush")== "GEEKSFORGEEKS");
-}
