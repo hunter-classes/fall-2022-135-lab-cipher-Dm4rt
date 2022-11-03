@@ -2,16 +2,12 @@
 #include "doctest.h"
 #include "funcs.h"
 #include "caesar.h"
-#include "vigenere.h"
-#include "decryption.h"
 
 // add your tests here
-TEST_CASE("shiftChar"){
-  CHECK(shiftChar('n',5)=='s');
-  CHECK(shiftChar('N',5)=='S');
-  CHECK(shiftChar('y',7)=='f');
-  CHECK(shiftChar('Y',7)=='F');
-  CHECK(shiftChar('!',10)=='!');
+TEST_CASE("Solve"){	
+  CHECK(solve("YQJU Dqjpan Zwazwhqo Lnkcnwi")=="CUNY Hunter Daedalus Program");
+  CHECK(solve("Uv, ubj ner lbh?")=="Hi, how are you?");
+  CHECK(solve("Vjh cqn Oxaln kn frcq hxd!")=="May the Force be with you!");
 }
 
 
