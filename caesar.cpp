@@ -52,7 +52,7 @@ std::string solve(std::string encrypted_string){
 			       7.31,0.10,0.69,3.98,2.61,6.95,7.68,1.82,0.11,
 			       6.02,6.28,9.10,2.88,1.11,2.09,0.17,2.11,0.07};
 
-  int lowestDistance;
+  int lowestDistance=-1;
   int lowDistShift;
   for(int shift=1;shift<26;shift++){
     std::string newMessage=encryptCaesar(encrypted_string,shift);
@@ -77,7 +77,7 @@ std::string solve(std::string encrypted_string){
     }
     int curDistance=0;
     curDistance=sqrt(sum);
-    if(lowestDistance==NULL){
+    if(lowestDistance==-1){
       lowestDistance=curDistance;
       lowDistShift=shift;
     }
